@@ -1,0 +1,6 @@
+﻿Sample record: TN0, Car, entry minute 540
+Search target: TN9999
+Parallel-array result index: 9999
+Object-array result index: 9999
+Parallel-array search (1000 runs): 24653600 ns
+Object-array search (1000 runs): 22113000 ns
