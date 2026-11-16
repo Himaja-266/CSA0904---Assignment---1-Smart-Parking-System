@@ -1,0 +1,9 @@
+# Task 05: Demonstrate Static Ticket Counter and Object Life Cycle
+
+`nextTicketNumber` and `totalOccupancy` are `static`, so there is one copy per loaded `ParkingTicket` class, shared by every gate. The static block initializes them once when the class is initialized. `getTotalOccupancy` and `getNextTicketNumber` are static methods because they report class-wide state. An instance ticket is returned by `ParkingGate.enter` and passed to `ParkingGate.exit`.
+
+Calling `close` releases occupancy exactly once. After exit, an object becomes eligible for garbage collection only when no live references can reach it. Setting the local reference to `null` demonstrates removing one reference, but garbage collection timing is nondeterministic and is not forced by this program.
+
+## Alternative Concept and Complexity Analysis
+
+If each north/south facility uses an instance counter, each counter costs $O(1)$ space and total counter storage for `k` facilities is $O(k)$. Independent sequences can collide: both facilities could issue `1`. A safe local-counter design can put a facility identifier in the ticket (`N-1`, `S-1`), making the pair globally unique; alternatively, use one central static/atomic sequence. Ticket objects and their stored IDs use $O(n)$ space for `n` retained tickets; static global counter state itself uses $O(1)$ space. Entry/exit here are $O(1)$ operations. The demo warms up and averages 100,000 entry/exit pairs using `System.nanoTime()`; timing is environment-dependent. The counters are not thread-safe; a concurrent system should use `AtomicLong` and synchronize occupancy changes.

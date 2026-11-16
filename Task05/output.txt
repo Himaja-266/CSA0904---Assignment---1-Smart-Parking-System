@@ -1,0 +1,8 @@
+﻿ParkingTicket class initialized
+Tickets: P-1, P-2
+Occupancy across gates: 2
+Occupancy after first exit: 1
+Exited ticket eligible for GC after references clear: true
+Occupancy after both exits: 0
+Average entry/exit pair after warm-up: 173 ns/op
+Next ticket sequence: 110003
