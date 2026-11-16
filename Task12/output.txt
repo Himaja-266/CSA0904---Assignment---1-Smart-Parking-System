@@ -1,0 +1,10 @@
+﻿Floors: 5
+Slots per floor: [2, 3, 1, 4, 2]
+EBike P-1 flat fee: Rs 15
+DeliveryVan 10:00-12:00: Rs 100
+DeliveryVan 08:00-10:00: Rs 70
+Negative duration rejected despite pass: true
+Visitor one-day pass fee: Rs 0
+Visitor without pass fee: Rs 50
+Existing Task11 classes modified: 0
+Average pricing-rule call after warm-up: 207 ns/op
