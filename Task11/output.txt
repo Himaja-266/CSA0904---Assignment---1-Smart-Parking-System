@@ -1,0 +1,19 @@
+﻿ID | Input | Expected | Actual | Result
+T01 | visitor TwoWheeler, 130 min | 26 | 26 | PASS
+T02 | visitor Car, 130 min | 70 | 70 | PASS
+T03 | visitor ElectricCar, 130 min + 10 kWh | 190 | 190 | PASS
+T04 | one-slot facility, first entry | [0, 0] | [0, 0] | PASS
+T05 | visitor Car, 0 minutes | 0 | 0 | PASS
+T06 | visitor Car, exactly 60 minutes | 30 | 30 | PASS
+T07 | visitor Car, exactly 120 minutes | 50 | 50 | PASS
+T08 | visitor Car, exactly 1440 minutes | 200 | 200 | PASS
+T09 | unknown vehicle type | UNKNOWN_VEHICLE_TYPE | UNKNOWN_VEHICLE_TYPE | PASS
+T10 | same regNo entered twice | DUPLICATE_REGISTRATION | DUPLICATE_REGISTRATION | PASS
+T11 | slot index floor=-1, slot=0 | INVALID_SLOT | INVALID_SLOT | PASS
+T12 | visitor Car, negative duration | NEGATIVE_DURATION | NEGATIVE_DURATION | PASS
+T13 | valid student monthly pass, 130 min | 0 | 0 | PASS
+T14 | valid staff monthly pass, 130 min | 0 | 0 | PASS
+T15 | no free slot after first vehicle | NO_SLOT_FREE | NO_SLOT_FREE | PASS
+Day scenario:
+Hand calculation: TwoWheeler 61 min = 18; pass-holder Car = 0; EV 1 min + 2 kWh = 30 + 24; total = 72
+Program total: 72

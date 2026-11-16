@@ -1,0 +1,3 @@
+﻿n=1000 average ns/lookup: array=14211, ArrayList=8441, HashMap=1693
+n=10000 average ns/lookup: array=29927, ArrayList=18098, HashMap=104
+n=100000 average ns/lookup: array=235440, ArrayList=234721, HashMap=45
