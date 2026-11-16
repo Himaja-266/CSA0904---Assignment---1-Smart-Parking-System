@@ -1,0 +1,5 @@
+﻿Creating ElectricCar:
+Vehicle constructor: TN03C3
+Car constructor
+ElectricCar constructor
+Average ElectricCar construction after warm-up: 292 ns/object
