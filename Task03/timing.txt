@@ -1,0 +1,1 @@
+﻿Average allocate/release pair after warm-up: 141 ns/op
