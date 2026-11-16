@@ -1,0 +1,9 @@
+# Task 10: Demonstrate Packages, Access Modifiers, and Validation
+
+The code is divided into `parking.model`, `parking.service`, and `parking.app`. Fields are `private` so callers cannot bypass invariants. Constructors and APIs used by other packages are `public`. `Vehicle.validateDuration` is `protected` so subclasses can reuse its rule. `Vehicle.isRegistrationUsable` and `SlotValidator.isValidFloor` are package-private helpers intended only for their own package. `SlotValidator.capacity` is `private` because only its public wrapper needs it.
+
+`ParkingData` setters reject a negative duration and a slot outside the supplied floor capacity; getters return the stored, already-validated values. `Integer` is a wrapper around primitive `int`. Autoboxing converts assignments such as `Integer cachedA = 127`. Java caches the small integer range (at least -128 through 127), so the two 127 references compare identical in this example. Separate 128 wrappers need not be identical; use `.equals()` for numeric value comparison, not `==`.
+
+## Alternative Concept and Complexity Analysis
+
+An alternative exposes public fields and asks every caller to validate before assigning. One forgotten check can store a negative duration or invalid slot; the same rule is duplicated across `m` call sites and changes must update all `m`. Encapsulated validation centralizes the check. Each setter/slot check here is $O(1)$ time (capacity calculation is $O(F)$ for `F` floors) and uses $O(1)$ extra space; validation runs once per update rather than being repeated independently by callers. The demo warms up and averages 50,000 slot checks with `System.nanoTime()`.

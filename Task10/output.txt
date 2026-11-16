@@ -1,0 +1,10 @@
+﻿Fee: Rs 90
+Valid slot (floor 1, slot 50): true
+Capacity: 170
+Public registration API valid: true
+Negative duration rejected
+Invalid slot number rejected
+Integer 127 ==: true
+Integer 128 ==: false
+Integer 128 equals: true
+Average slot validation after warm-up: 19 ns/op
