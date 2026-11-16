@@ -1,0 +1,5 @@
+﻿Default: ParkingTicket{UNASSIGNED, UNKNOWN, floor=-1, slot=-1}
+Overloaded: ParkingTicket{T-100, TN01A1, floor=0, slot=0}
+Parameterized: ParkingTicket{T-101, TN02B2, floor=1, slot=4}
+Copy has same ticket number: true
+Average ticket construction after warm-up: 120 ns/object
