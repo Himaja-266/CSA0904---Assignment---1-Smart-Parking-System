@@ -1,0 +1,6 @@
+﻿Vehicle: Car TN02B2
+Cross-type equality: true
+Equal objects have equal hash codes: true
+130-minute car fee: Rs 90
+Daily cap: Rs 500
+Average fee call after warm-up: 20 ns/op

@@ -1,0 +1,9 @@
+# Task 07: Demonstrate Overriding, equals, and hashCode
+
+`TwoWheeler` and `Car` override `ratePerHour()` with `@Override`; both also override `calculateFee(int)`. An override must have the same method signature, a compatible (covariant) return type, and cannot reduce visibility. `@Override` lets the compiler catch a misspelled method or mismatched signature. `Car.calculateFee` applies a daily cap after using the parent's integer-hour calculation.
+
+`toString()` presents a readable vehicle label. `equals()` and `hashCode()` use the registration number, so two objects with the same registration are equal even across subclasses. This is the chosen value identity for the demo; an operational system must enforce that only one such registration is parked at a time. `final` is used on the registration field because it must not change after construction, the getter/equality methods because subclasses should not weaken identity rules, and `TwoWheeler` because the example treats it as a leaf type.
+
+## Alternative Concept and Complexity Analysis
+
+An alternative is one `Vehicle` class with a type field and a central switch in `calculateFee`. A switch over an enum is typically $O(1)$ dispatch; a chain of up to `k` `instanceof` checks is $O(k)$ in the worst case. Dynamic method dispatch here is conceptually $O(1)$ and avoids a central switch. The switch design uses fewer classes but adding a type edits the central class and tests; subclassing generally adds a subtype and tests without changing existing fee methods. Fee calculation is $O(1)$ time and $O(1)$ extra space. The demo warms up and averages 50,000 calls using `System.nanoTime()`; the number is a local JVM sample.
