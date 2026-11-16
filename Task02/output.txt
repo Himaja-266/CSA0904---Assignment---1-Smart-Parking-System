@@ -1,0 +1,12 @@
+﻿Input registration number: TN02CD2222
+Jagged floors: [[null, null], [null, TN02CD2222, null], [null]]
+Wrong integer division: 130/60 = 2 hours
+Started-hour billing: (130 + 59)/60 = 3 hours
+Slot number type: int; vehicle number type: String
+Entry time type: long epoch milliseconds; duration type: long minutes; fee type: long rupees
+Search result flattened index: 3
+Jagged search average after warm-up: 48 ns/op
+Integer division: 130 / 60 = 2
+Cast after division: (double) (130 / 60) = 2.0
+Floating-point division: (double) 130 / 60 = 2.1666666666666665
+Correct started hours: (130 + 59) / 60 = 3
