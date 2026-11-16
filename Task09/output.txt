@@ -1,0 +1,7 @@
+﻿Abstract Vehicle fee: Rs 90.0
+10 kWh charged for Rs 120.0
+Payment accepted
+Amount paid: Rs 210.0
+Default charging rate: Rs 12/kWh
+Valid zero payment: true
+Average abstract-dispatch fee call after warm-up: 21 ns/op
