@@ -1,0 +1,5 @@
+﻿Declared type: Vehicle; actual type: Car
+calculateFee(130) runs Vehicle.calculateFee; its rate call dispatches to Car.ratePerHour
+Integer overload: Rs 90.0
+LocalTime overload: Rs 90.0
+Average polymorphic fee call after warm-up: 15 ns/op
